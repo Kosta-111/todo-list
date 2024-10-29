@@ -1,0 +1,5 @@
+<div [class.done]="todoItem.isDone">
+    <input type="checkbox" [checked]="todoItem.isDone">
+    <span [class.important]="todoItem.isImportant">{{todoItem.name}}</span>
+    <span [class.deadline]="todoItem.deadline != null">{{todoItem.deadline | date:'dd.MM.yyyy'}}</span>
+</div>

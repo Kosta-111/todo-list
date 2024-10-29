@@ -1,0 +1,25 @@
+div {
+    padding: 12px;
+    padding-left: 40px;
+}
+
+.important:before {
+    content: "!";
+    margin: 0 8px;
+    color: darkred;
+    display: inline-block;
+}
+
+.deadline {
+    background-color: rgb(120, 153, 164);
+    color: white;
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin-left: 4px;
+}
+
+.done {
+    background-color: rgb(226, 226, 226);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
