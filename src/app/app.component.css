@@ -8,7 +8,6 @@ ul.todo_list {
 
 .todo_list li:hover {
     filter: brightness(90%);
-    cursor: pointer;
 }
 
 .todo_list>li:nth-child(even) {
@@ -17,4 +16,9 @@ ul.todo_list {
 
 .todo_list>li:nth-child(odd) {
     background-color: rgb(51, 138, 168);
+}
+
+button {
+    margin-top: 10px;
+    width: 100px;
 }

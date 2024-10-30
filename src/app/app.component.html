@@ -1,8 +1,18 @@
 <h1>{{title}}</h1>
 <ul class="todo_list">
-  @for (item of todoItems; track item.id) {
+  @for (item of todoItems; track $index) {
     <li>
-      <app-todo-item [todoItem]="item"></app-todo-item>
+      <app-todo-item [todoItem]="item" (onDelete)="removeItem($event)"></app-todo-item>
     </li>
   }
 </ul>
+
+@if(todoItems.length > 0)
+{
+  <div>
+    <button (click)="clearAll()">Clear All</button>
+  </div>
+}
+
+<h2>Create New Todo Item</h2>
+<app-todo-create-form (onCreate)="create($event)"></app-todo-create-form>

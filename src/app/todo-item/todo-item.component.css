@@ -1,6 +1,7 @@
 div {
     padding: 12px;
     padding-left: 40px;
+    position: relative;
 }
 
 .important:before {
@@ -22,4 +23,16 @@ div {
     background-color: rgb(226, 226, 226);
     text-decoration: line-through;
     text-decoration-thickness: 2px;
+}
+
+button {
+    background-color: red;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.1);
+    filter: brightness(90%);
 }

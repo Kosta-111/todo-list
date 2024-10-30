@@ -1,0 +1,22 @@
+<form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
+    <label>
+        <span>ToDo title </span>
+        <input type="text" formControlName="name"/>
+    </label>
+    <label>
+        <span>Deadline </span>
+        <input type="date" formControlName="deadline" />
+    </label>
+    <label>
+        <input type="checkbox" formControlName="isDone" />
+        <span>done</span>
+    </label>
+    <label>
+        <input type="checkbox" formControlName="isImportant" />
+        <span>important</span>
+    </label>
+    <div>
+        <button type="reset">Cancel</button>
+        <button type="submit">Create</button>
+    </div>
+</form>

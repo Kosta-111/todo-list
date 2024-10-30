@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITodoItem } from '../models/todoItem';
 
 @Component({
@@ -11,11 +11,17 @@ import { ITodoItem } from '../models/todoItem';
 })
 export class TodoItemComponent {
   @Input()
-  todoItem: ITodoItem = {
-    id: 0,
-    name: "do something",
-    deadline: null,
-    isDone: false,
-    isImportant: false
-  };
+  todoItem?: ITodoItem;
+
+  @Output()
+  onDelete = new EventEmitter<number>();
+
+  changeDone() {
+    if (this.todoItem)
+      this.todoItem.isDone = !this.todoItem.isDone;
+  }
+
+  remove() {
+    this.onDelete.emit(this.todoItem?.id);
+  }
 }

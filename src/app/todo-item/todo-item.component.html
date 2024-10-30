@@ -1,5 +1,12 @@
-<div [class.done]="todoItem.isDone">
-    <input type="checkbox" [checked]="todoItem.isDone">
-    <span [class.important]="todoItem.isImportant">{{todoItem.name}}</span>
-    <span [class.deadline]="todoItem.deadline != null">{{todoItem.deadline | date:'dd.MM.yyyy'}}</span>
-</div>
+@if(todoItem)
+{
+    <div [class.done]="todoItem.isDone">
+        <input type="checkbox" [checked]="todoItem.isDone" (change)="changeDone()">
+        <span [class.important]="todoItem.isImportant">{{todoItem.name}}</span>
+        @if(todoItem.deadline)
+        {
+            <span class="deadline">{{todoItem.deadline | date:'dd.MM.yyyy'}}</span>
+        }
+        <button (click)="remove()">X</button>
+    </div>
+}
