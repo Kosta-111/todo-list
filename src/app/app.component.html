@@ -1,13 +1,15 @@
 <h1>{{title}}</h1>
+<app-todo-filters-form (onUpdate)="updateFilter($event)"></app-todo-filters-form>
+
 <ul class="todo_list">
-  @for (item of todoItems; track $index) {
+  @for (item of filteredItems; track $index) {
     <li>
       <app-todo-item [todoItem]="item" (onDelete)="removeItem($event)"></app-todo-item>
     </li>
   }
 </ul>
 
-@if(todoItems.length > 0)
+@if(filteredItems.length > 0)
 {
   <div>
     <button (click)="clearAll()">Clear All</button>

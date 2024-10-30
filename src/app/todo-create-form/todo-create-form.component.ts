@@ -30,7 +30,6 @@ export class TodoCreateFormComponent {
       alert("Invalid data!");
       return;
     }
-
     let todoItem = this.todoForm.value as ITodoItem;
     this.onCreate.emit(todoItem);
   }

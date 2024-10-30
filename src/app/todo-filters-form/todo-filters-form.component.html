@@ -1,0 +1,22 @@
+<form [formGroup]="filterForm" (change)="onChange()">
+    <label>
+        <span>Deadline sorting by </span>
+        <select formControlName="deadlineSort">
+            <option value="0" selected>None</option>
+            <option value="1">Increasing</option>
+            <option value="2">Decreasing</option>
+        </select>
+    </label>
+    <label>
+        <span>Priority filter </span>
+        <select formControlName="priorityFilter">
+            <option value="0" selected>All</option>
+            <option value="1">Important</option>
+            <option value="2">Not important</option>
+        </select>
+    </label>
+    <label>
+        <span>Search </span>
+        <input type="text" (input)="onChange()" formControlName="searchText"/>
+    </label>
+</form>
