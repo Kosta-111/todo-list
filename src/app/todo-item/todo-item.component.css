@@ -19,7 +19,7 @@ div {
     margin-left: 4px;
 }
 
-.done {
+.completed {
     background-color: rgb(226, 226, 226);
     text-decoration: line-through;
     text-decoration-thickness: 2px;

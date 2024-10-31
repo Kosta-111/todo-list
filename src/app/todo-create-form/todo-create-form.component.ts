@@ -18,10 +18,10 @@ export class TodoCreateFormComponent {
   constructor(private formBuilder: FormBuilder) {
 
     this.todoForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      title: ['', Validators.required],
       deadline: [null],
-      isDone: [false],
-      isImportant: [false]
+      completed: [false],
+      important: [false]
     });
   }
 

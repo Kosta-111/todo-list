@@ -1,18 +1,18 @@
 <form [formGroup]="todoForm" (ngSubmit)="onSubmit()">
     <label>
         <span>ToDo title </span>
-        <input type="text" formControlName="name"/>
+        <input type="text" formControlName="title"/>
     </label>
     <label>
         <span>Deadline </span>
         <input type="date" formControlName="deadline" />
     </label>
     <label>
-        <input type="checkbox" formControlName="isDone" />
-        <span>done</span>
+        <input type="checkbox" formControlName="completed" />
+        <span>completed</span>
     </label>
     <label>
-        <input type="checkbox" formControlName="isImportant" />
+        <input type="checkbox" formControlName="important" />
         <span>important</span>
     </label>
     <div>

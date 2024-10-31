@@ -1,86 +1,86 @@
 export interface ITodoItem {
   id: number;
-  name: string;
+  title: string;
   deadline?: Date;
-  isDone: boolean;
-  isImportant: boolean;
+  completed: boolean;
+  important?: boolean;
 }
 
 export const TODOITEMS: ITodoItem[] = [
   {
     id: 1,
-    name: "Hit the gym",
+    title: "Hit the gym",
     deadline: new Date(2023, 3, 1),
-    isDone: false,
-    isImportant: false
+    completed: false,
+    important: false
   },
   {
     id: 2,
-    name: "Pay bills",
-    isDone: true,
-    isImportant: true
+    title: "Pay bills",
+    completed: true,
+    important: true
   },
   {
     id: 3,
-    name: "Meet John",
-    isDone: false,
-    isImportant: false
+    title: "Meet John",
+    completed: false,
+    important: false
   },
   {
     id: 4,
-    name: "Buy eggs",
+    title: "Buy eggs",
     deadline: new Date(2023, 2, 29),
-    isDone: false,
-    isImportant: true
+    completed: false,
+    important: true
   },
   {
     id: 5,
-    name: "Read a book",
-    isDone: true,
-    isImportant: false
+    title: "Read a book",
+    completed: true,
+    important: false
   },
   {
     id: 6,
-    name: "Organize office",
-    isDone: false,
-    isImportant: false
+    title: "Organize office",
+    completed: false,
+    important: false
   },
   {
     id: 7,
-    name: "Eat dinner",
-    isDone: false,
-    isImportant: false
+    title: "Eat dinner",
+    completed: false,
+    important: false
   },
   {
     id: 8,
-    name: "Buy apples",
+    title: "Buy apples",
     deadline: new Date(2023, 2, 5),
-    isDone: false,
-    isImportant: true
+    completed: false,
+    important: true
   },
   {
     id: 9,
-    name: "Meet George",
-    isDone: false,
-    isImportant: true
+    title: "Meet George",
+    completed: false,
+    important: true
   },
   {
     id: 10,
-    name: "Feed the cat",
-    isDone: false,
-    isImportant: false
+    title: "Feed the cat",
+    completed: false,
+    important: false
   },
   {
     id: 11,
-    name: "Write a letter",
-    isDone: true,
-    isImportant: false
+    title: "Write a letter",
+    completed: true,
+    important: false
   },
   {
     id: 12,
-    name: "Run 1 km",
+    title: "Run 1 km",
     deadline: new Date(2022, 0, 15),
-    isDone: false,
-    isImportant: false
+    completed: false,
+    important: false
   }
 ];

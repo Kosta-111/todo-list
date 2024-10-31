@@ -5,6 +5,7 @@ import { ITodoItem, TODOITEMS } from './models/todoItem';
 import { TodoCreateFormComponent } from './todo-create-form/todo-create-form.component';
 import { TodoFiltersFormComponent } from './todo-filters-form/todo-filters-form.component';
 import { IFilter } from './models/filter';
+import { TodosService } from './services/todos.service';
 
 @Component({
   selector: 'app-root',
@@ -15,16 +16,20 @@ import { IFilter } from './models/filter';
 })
 export class AppComponent {
   title = 'My To Do List';  
-  todoItems: ITodoItem[] = TODOITEMS;
-  filteredItems: ITodoItem[] = TODOITEMS;
+  todoItems: ITodoItem[] = [];
+  filteredItems: ITodoItem[] = [];
   filter: IFilter;
-  currentId: number;
+  currentId: number = 1;
   
-  constructor() {
-    this.currentId = this.todoItems.length > 0 
-      ? Math.max(...this.todoItems.map(x => x.id)) + 1
-      : 1;
-
+  constructor(private todosService: TodosService) {
+    
+    this.todosService.getByUserId(1).subscribe(data => {
+      this.filteredItems = this.todoItems = data;      
+      this.currentId = data.length > 0 
+        ? Math.max(...data.map(x => x.id)) + 1
+        : 1;
+    });
+    
     this.filter = {
       deadlineSort: '0',
       priorityFilter: '0',
@@ -74,15 +79,15 @@ export class AppComponent {
     }
     switch (this.filter.priorityFilter) {
       case '1':
-        this.filteredItems = this.filteredItems.filter(x => x.isImportant);
+        this.filteredItems = this.filteredItems.filter(x => x.important);
         break;
       case '2':
-        this.filteredItems = this.filteredItems.filter(x => !x.isImportant);
+        this.filteredItems = this.filteredItems.filter(x => !x.important);
         break;    
       default:
         break;
     }
     if(this.filter.searchText.length > 0)
-      this.filteredItems = this.filteredItems.filter(x => x.name.toLowerCase().includes(this.filter.searchText.toLowerCase()));
+      this.filteredItems = this.filteredItems.filter(x => x.title.toLowerCase().includes(this.filter.searchText.toLowerCase()));
   }
 }

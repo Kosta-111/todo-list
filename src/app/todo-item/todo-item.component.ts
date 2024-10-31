@@ -16,9 +16,9 @@ export class TodoItemComponent {
   @Output()
   onDelete = new EventEmitter<number>();
 
-  changeDone() {
+  changeCompleted() {
     if (this.todoItem)
-      this.todoItem.isDone = !this.todoItem.isDone;
+      this.todoItem.completed = !this.todoItem.completed;
   }
 
   remove() {

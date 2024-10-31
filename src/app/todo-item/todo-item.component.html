@@ -1,8 +1,8 @@
 @if(todoItem)
 {
-    <div [class.done]="todoItem.isDone">
-        <input type="checkbox" [checked]="todoItem.isDone" (change)="changeDone()">
-        <span [class.important]="todoItem.isImportant">{{todoItem.name}}</span>
+    <div [class.completed]="todoItem.completed">
+        <input type="checkbox" [checked]="todoItem.completed" (change)="changeCompleted()">
+        <span [class.important]="todoItem.important">{{todoItem.title}}</span>
         @if(todoItem.deadline)
         {
             <span class="deadline">{{todoItem.deadline | date:'dd.MM.yyyy'}}</span>
