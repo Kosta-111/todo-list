@@ -16,8 +16,8 @@ import { TodosService } from './services/todos.service';
 })
 export class AppComponent {
   title = 'My To Do List';  
-  todoItems: ITodoItem[] = [];
-  filteredItems: ITodoItem[] = [];
+  todoItems: ITodoItem[] = [];  //= TODOITEMS
+  filteredItems: ITodoItem[] = [];  //= TODOITEMS
   filter: IFilter;
   currentId: number = 1;
   
